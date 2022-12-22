@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Giá hoa quả</h1>
+    <form action="javascript:void(0);">
+      <input type="text" id="name" />
+      <button onclick="checkPrice()">Xem giá</button>
+      <div id="show"></div>
+    </form>
+
+    <script>
+      let price = 0
+      let string = " VND/kg"
+      let oi = (duaHau = 20000)
+      let tao = (xoai = 30000)
+      let cam = (chomChom = 40000)
+      let mangCut = 50000
+      console.log(cam, chomChom)
+      function checkPrice() {
+        let name = document.getElementById("name").value
+        let show = document.getElementById("show")
+        // console.log(name)
+        switch (true) {
+          case name == "Măng Cụt":
+            price = mangCut
+            // console.log(price)
+            document.getElementById("show").innerHTML = price + string
+            break
+          case name == "Ổi":
+          case name == "Dưa Hấu":
+            price = oi
+            document.getElementById("show").innerHTML = price + string
+            break
+          case name == "Táo":
+          case name == "Xoài":
+            price = tao
+            document.getElementById("show").innerHTML = price + string
+            break
+          case name == "Cam":
+          case name == "Chôm Chôm":
+            price = cam
+            document.getElementById("show").innerHTML = price + string
+            break
+        }
+      }
+    </script>
+  </body>
+</html>
